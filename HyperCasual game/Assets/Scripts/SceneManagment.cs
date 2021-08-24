@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class BotonStart : MonoBehaviour
+public class SceneManagment : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   [SerializeField] private string _sceneName;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public void ChangeToNewScene()
+   {
+        SceneManager.LoadScene(_sceneName);
+   }
+
 }
