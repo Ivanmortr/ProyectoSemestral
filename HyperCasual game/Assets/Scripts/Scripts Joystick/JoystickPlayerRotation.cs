@@ -12,10 +12,10 @@ public class JoystickPlayerRotation : MonoBehaviour
 
     private void RotateWithJoystick()
     {
-        var moveVector = (Vector2.up * _joystickRotation.Vertical - Vector2.left * _joystickRotation.Horizontal);
+        var moveVector = (Vector3.forward * _joystickRotation.Vertical - Vector3.left * _joystickRotation.Horizontal);
         if(_joystickRotation.Horizontal !=0 || _joystickRotation.Vertical != 0)
         {
-           gameObject.transform.rotation = Quaternion.LookRotation(Vector3.forward, moveVector);
+           gameObject.transform.rotation = Quaternion.LookRotation(Vector3.up, moveVector);
         }
     }
 }
