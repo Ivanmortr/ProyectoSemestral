@@ -17,4 +17,9 @@ public class BasicBullet : MonoBehaviour
         enemy?.DoDamage(1);
         Destroy(gameObject);//ESTO TIENE QUE FUNCIONAR CON POOL OBJECT
     }
+
+    private void Start()
+    {
+        Destroy(gameObject,3f);
+    }
 }
