@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e94bd38ced666c4aacdb73acd723984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: Gameplay
+  _sceneName: Gameplay2D
   _loading: {fileID: 559355726}
 --- !u!4 &23880354
 Transform:
