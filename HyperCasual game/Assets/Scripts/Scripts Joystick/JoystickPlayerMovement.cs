@@ -1,12 +1,12 @@
 
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class JoystickPlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private VariableJoystick _joystick;
-    [SerializeField] private Rigidbody _rigidbody2D;
+    [SerializeField] private Rigidbody2D _rigidbody2D;
 
     private void FixedUpdate()
     {
