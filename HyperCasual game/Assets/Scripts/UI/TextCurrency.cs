@@ -22,6 +22,7 @@ public class TextCurrency : MonoBehaviour
     private void HandleIncreaseAmountPerDeath(int amountToIncrease)
     {
         _goldAmount += amountToIncrease;
+        _textCurrencyGold.text = _goldAmount.ToString();
     }
 
     private void OnDisable()
