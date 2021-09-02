@@ -12,7 +12,7 @@ public class TextEnemiesKilled : MonoBehaviour
         Health.OnDeath += IncreaseEnemyKilled;
     }
 
-    private void IncreaseEnemyKilled()
+    private void IncreaseEnemyKilled(int enemyKilled)
     {
         _enemyKill++;
         _textEnemiesKilled.text = _enemyKill.ToString();

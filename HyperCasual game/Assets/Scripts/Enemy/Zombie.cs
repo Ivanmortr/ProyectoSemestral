@@ -17,9 +17,8 @@ public class Zombie : Enemy, IDoEffects
         _target = GameObject.Find("Player").transform;
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         _myHealth = gameObject.GetComponent<IDamageable>();
-        
     }
-    
+
     private void FixedUpdate()
     {
         if(PlayerAlive)

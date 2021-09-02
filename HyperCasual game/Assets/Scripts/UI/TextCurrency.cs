@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -15,11 +16,18 @@ public class TextCurrency : MonoBehaviour
     private void OnEnable()
     {
         BasicBullet.OnDamaged += IncreaseCurrencyInText;
+        Health.OnDeath += HandleIncreaseAmountPerDeath;
+    }
+
+    private void HandleIncreaseAmountPerDeath(int amountToIncrease)
+    {
+        _goldAmount += amountToIncrease;
     }
 
     private void OnDisable()
     {
         BasicBullet.OnDamaged -= IncreaseCurrencyInText;
+        Health.OnDeath -= HandleIncreaseAmountPerDeath;
     }
 
     private void IncreaseCurrencyInText(int currencyGold)

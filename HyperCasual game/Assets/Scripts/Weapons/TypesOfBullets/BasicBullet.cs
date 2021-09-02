@@ -9,6 +9,9 @@ public class BasicBullet : MonoBehaviour
 
     [SerializeField] private float _speed = 10f;
     [SerializeField] private int _amountToCurrency = 1;
+    [SerializeField] private static int _amountPerDeath = 5;
+
+    public static int AmountPerDeath => _amountPerDeath;
 
     private void Awake()
     {

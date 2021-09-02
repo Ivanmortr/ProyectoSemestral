@@ -2,7 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 public class Health : MonoBehaviour,IDamageable
 {
-    public delegate void _OnDeath();
+    public delegate void _OnDeath(int amountToIncrease);
     public static event _OnDeath OnDeath;
 
     [SerializeField] private int _maxHealth = 100;
@@ -17,7 +17,7 @@ public class Health : MonoBehaviour,IDamageable
     {
         _currentHealth -= damageToDo;
         if (_currentHealth > 0) return;
-        OnDeath?.Invoke();
+        OnDeath?.Invoke(BasicBullet.AmountPerDeath);
         Destroy(gameObject);
 
     }
