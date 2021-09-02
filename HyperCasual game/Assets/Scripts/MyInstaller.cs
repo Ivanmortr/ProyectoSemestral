@@ -3,6 +3,7 @@ using UnityEngine;
 public class MyInstaller : MonoBehaviour
 {
     [SerializeField] private Transform _player;
+    [SerializeField] private Transform _playerGun;
     [SerializeField] private BasicGun _basicGun;
 
     public Transform GetPlayerTransform => _player;
@@ -10,7 +11,7 @@ public class MyInstaller : MonoBehaviour
     private void Awake()
     {
         var player = _player.gameObject.GetComponent<Player>();
-        var weapon = GetWeapon(GetPlayerTransform);
+        var weapon = GetWeapon(_playerGun);
         player.SetWeapon(weapon);
     }
 

@@ -1,16 +1,15 @@
 using System;
 using UnityEngine;
 using DG.Tweening;
+
+
 public class Player : MonoBehaviour,IDoEffects
 {
-    [SerializeField] private int _currencyGold = 0;
+    
     private Weapon _weapon;
     private SpriteRenderer _spriteRenderer;
 
-    public int CurrencyGold { get => _currencyGold;
-        set => _currencyGold = value;
-    }
-
+    
     private void Start()
     {
         _spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
@@ -41,7 +40,7 @@ public class Player : MonoBehaviour,IDoEffects
 
     private void HandleOnDamagedIncreaseCurrencyGold(int amountToIncrease)
     {
-        CurrencyGold += amountToIncrease;
+        PlayerData.CurrencyGold += amountToIncrease;
     }
 
     public void DoEffect()
