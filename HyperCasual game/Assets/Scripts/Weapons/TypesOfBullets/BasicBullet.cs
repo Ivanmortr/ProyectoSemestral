@@ -4,7 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BasicBullet : MonoBehaviour
 {
+    public delegate void _OnDamaged(int amount);
+    public static event _OnDamaged OnDamaged;
+
     [SerializeField] private float _speed = 10f;
+    [SerializeField] private int _amountToCurrency = 1;
 
     private void Awake()
     {
@@ -13,8 +17,10 @@ public class BasicBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var enemy = other.GetComponent<IDamageable>();
-        enemy?.DoDamage(1);
+        if (!other.CompareTag("Enemy")) return;
+        var effect = other.GetComponent<IDoEffects>();
+        OnDamaged?.Invoke(_amountToCurrency);
+        effect?.DoEffect();
         Destroy(gameObject);//ESTO TIENE QUE FUNCIONAR CON POOL OBJECT
     }
 

@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+using System.Threading.Tasks;
 
 public interface Weapon
 {
@@ -11,4 +8,9 @@ public interface Weapon
 public interface IDamageable
 {
     void DoDamage(int damageToDo);
+}
+
+public interface IDoEffects
+{
+    void DoEffect();
 }

@@ -1,22 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-
-public class Player : MonoBehaviour, IDamageable
+using DG.Tweening;
+public class Player : MonoBehaviour,IDoEffects
 {
-    [SerializeField] private int _health = 100;
+    [SerializeField] private int _currencyGold = 0;
     private Weapon _weapon;
+    private SpriteRenderer _spriteRenderer;
 
-    public void DoDamage(int damageToDo)
+    public int CurrencyGold { get => _currencyGold;
+        set => _currencyGold = value;
+    }
+
+    private void Start()
     {
-        _health -= damageToDo; 
+        _spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
+    }
+
+    private void OnEnable()
+    {
+        BasicBullet.OnDamaged += HandleOnDamagedIncreaseCurrencyGold;
+    }
+
+    private void OnDisable()
+    {
+        BasicBullet.OnDamaged -= HandleOnDamagedIncreaseCurrencyGold;
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            
             _weapon.Attack();
         }
     }
@@ -25,4 +38,24 @@ public class Player : MonoBehaviour, IDamageable
     {
         _weapon = weapon;
     }
+
+    private void HandleOnDamagedIncreaseCurrencyGold(int amountToIncrease)
+    {
+        CurrencyGold += amountToIncrease;
+    }
+
+    public void DoEffect()
+    {
+        var sequence = DOTween.Sequence();
+        sequence.Insert(0.0f, _spriteRenderer.DOColor(Color.red, 0.1f));
+        sequence.Insert(0.0f, Camera.main.DOShakePosition(0.2f, 0.3f, 1000));
+        sequence.Insert(0.1f, _spriteRenderer.DOColor(Color.white, 0.1f));
+    }
+
+    private void OnDestroy()
+    {
+        Zombie.PlayerAlive = false;
+    }
 }
+
+

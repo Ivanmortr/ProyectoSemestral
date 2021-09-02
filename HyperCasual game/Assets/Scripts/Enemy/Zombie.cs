@@ -1,47 +1,52 @@
+using System;
 using UnityEngine;
+using DG.Tweening;
+using System.Threading.Tasks;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Zombie : Enemy, IDamageable
+public class Zombie : Enemy, IDoEffects
 {
     [SerializeField] private Transform _target;
     [SerializeField] private float _speed = 2f;
-    [SerializeField] private int _healthPoints = 2;   
     private Rigidbody2D _rigidbody2D;
+    private IDamageable _myHealth;
+    public static bool PlayerAlive = true;
     
- 
-    
-
-
     private void Start()
     {
         _target = GameObject.Find("Player").transform;
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+        _myHealth = gameObject.GetComponent<IDamageable>();
+        
     }
-
+    
     private void FixedUpdate()
     {
-        Perseguir();
+        if(PlayerAlive)
+        ChaseTarget();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.CompareTag("Player"))
-        {
-            var player = collision.gameObject.GetComponent<IDamageable>();
-            player?.DoDamage(1);
-        }
+        if (!collision.collider.CompareTag("Player")) return;
+        var healthPlayer = collision.gameObject.GetComponent<IDamageable>();
+        var effectPlayer = collision.gameObject.GetComponent<IDoEffects>();
+        effectPlayer?.DoEffect();
+        healthPlayer?.DoDamage(1);
     }
-    public override void Perseguir()
+    public override void ChaseTarget()
     {
-        var nextPoint = _target.position - transform.position;
+        var position = transform.position;
+        var nextPoint = _target.position - position;
         nextPoint.Normalize();
-        _rigidbody2D.MovePosition(transform.position + (nextPoint * _speed * Time.deltaTime));
+        _rigidbody2D.MovePosition(position + (nextPoint * (_speed * Time.deltaTime)));
     }
 
-    public void DoDamage(int damageToDo)
+    public void DoEffect()
     {
-        _healthPoints -= damageToDo;
-        if (_healthPoints <= 0)
-            Destroy(gameObject);
+        gameObject.transform.DOShakeScale(0.15f, 0.4f, 10, 90, true);
+         _myHealth?.DoDamage(1);
     }
+
+   
 }
