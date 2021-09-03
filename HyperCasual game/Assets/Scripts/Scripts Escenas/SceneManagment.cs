@@ -21,4 +21,13 @@ public class SceneManagment : MonoBehaviour
         SceneManager.LoadScene(_sceneName);
    }
 
+    public void GameOver()
+    {
+        Interfaces _ui = GetComponent<Interfaces>();
+        if (_ui != null)
+        {
+            _ui.ToggleDeath();
+        }
+    }
+
 }
