@@ -12,11 +12,13 @@ public class SceneManagment : MonoBehaviour
    public void ChangeToNewScene()
    {
         _loading.SetActive(true);
-        DOVirtual.DelayedCall(1.0f, GoNextScene);
+        DOVirtual.DelayedCall(1.0f, Restart);
         
    }
-   public void GoNextScene()
+   public void Restart()
    {
-        SceneManager.LoadScene(_sceneName); 
+        PlayerData.PlayerAlive = true;
+        PlayerData.CurrencyGold = 0;
+        SceneManager.LoadScene(_sceneName);
    }
 }
