@@ -556,7 +556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33827b8a779b37e4880b88d2c942895f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currencyGold: 0
 --- !u!4 &419363925
 Transform:
   m_ObjectHideFlags: 0
@@ -1041,6 +1040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 419363925}
+  _playerGun: {fileID: 1283608238}
   _basicGun: {fileID: 88895844914410107, guid: 075ee333e77de1d40a4800bfd8a13ce7, type: 3}
 --- !u!4 &993850914
 Transform:
@@ -1066,6 +1066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1137509138}
   - component: {fileID: 1137509139}
+  - component: {fileID: 1137509140}
   m_Layer: 0
   m_Name: Wall Up
   m_TagString: Untagged
@@ -1863,6 +1864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1670479785}
   - component: {fileID: 1670479786}
+  - component: {fileID: 1670479787}
   m_Layer: 0
   m_Name: Wall Left
   m_TagString: Untagged
@@ -2001,6 +2003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1830094151}
   - component: {fileID: 1830094152}
+  - component: {fileID: 1830094153}
   m_Layer: 0
   m_Name: Wall Derecha
   m_TagString: Untagged
