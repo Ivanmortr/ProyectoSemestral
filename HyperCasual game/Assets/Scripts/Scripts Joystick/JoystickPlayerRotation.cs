@@ -9,6 +9,7 @@ public class JoystickPlayerRotation : MonoBehaviour
     [SerializeField] private Sprite _spriteUp;
     [SerializeField] private Sprite _spriteRight;
     [SerializeField] private Sprite _spriteLeft;
+    [SerializeField] private Transform _gunTransformLeft, _gunTransformRight, _gunTransformUp, _gunTransformDown;
     private SpriteRenderer _spriteRenderer;
     private int _horizontal;
     private int _vertical;
@@ -36,7 +37,9 @@ public class JoystickPlayerRotation : MonoBehaviour
             {
               
                 _spriteRenderer.sprite = _spriteDown;
+                _spriteRenderer.sortingOrder = 1;
                 _basicGun.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                _basicGun.transform.AssignPosition(_gunTransformDown);
 
             }
             else 
@@ -44,6 +47,8 @@ public class JoystickPlayerRotation : MonoBehaviour
                
                 _spriteRenderer.sprite = _spriteRight;
                 _basicGun.transform.rotation = Quaternion.Euler(0f, 180f, 0);
+                _basicGun.transform.AssignPosition(_gunTransformRight);
+
             }
             return;
         }
@@ -54,12 +59,18 @@ public class JoystickPlayerRotation : MonoBehaviour
             
             _spriteRenderer.sprite = _spriteLeft;
             _basicGun.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            _basicGun.transform.AssignPosition(_gunTransformLeft);
+            
+
         }
         else 
         {
           
             _spriteRenderer.sprite = _spriteUp;
+            _spriteRenderer.sortingOrder = 2;
             _basicGun.transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+            _basicGun.transform.AssignPosition(_gunTransformUp);
+
         }
 
         return;
@@ -67,5 +78,13 @@ public class JoystickPlayerRotation : MonoBehaviour
 
 
 
+    }
+}
+
+public static class TransformExtension
+{
+    public static void AssignPosition(this Transform transform, Transform newTransform)
+    {
+        transform.position = newTransform.position;
     }
 }

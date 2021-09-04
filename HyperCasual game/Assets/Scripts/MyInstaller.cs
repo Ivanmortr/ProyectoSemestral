@@ -18,4 +18,7 @@ public class MyInstaller : MonoBehaviour
     {
         return Instantiate(_basicGun, parent);
     }
+
 }
+
+

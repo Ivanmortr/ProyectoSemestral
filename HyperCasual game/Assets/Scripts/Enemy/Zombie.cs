@@ -10,7 +10,7 @@ public class Zombie : Enemy, IDoEffects
     [SerializeField] private float _speed = 2f;
     private Rigidbody2D _rigidbody2D;
     private IDamageable _myHealth;
-    public static bool PlayerAlive = true;
+    
     
     private void Start()
     {
@@ -22,7 +22,7 @@ public class Zombie : Enemy, IDoEffects
     
     private void FixedUpdate()
     {
-        if(PlayerAlive)
+        if(PlayerData.PlayerAlive)
         ChaseTarget();
     }
 

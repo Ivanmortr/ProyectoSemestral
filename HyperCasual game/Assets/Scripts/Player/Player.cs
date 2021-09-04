@@ -5,6 +5,7 @@ public class Player : MonoBehaviour,IDoEffects
 {
     [SerializeField] private int _currencyGold = 0;
     private Weapon _weapon;
+    
     private SpriteRenderer _spriteRenderer;
 
     public int CurrencyGold { get => _currencyGold;
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour,IDoEffects
     private void Start()
     {
         _spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
+        _weapon.Attack();
+
     }
 
     private void OnEnable()
@@ -26,19 +29,11 @@ public class Player : MonoBehaviour,IDoEffects
         BasicBullet.OnDamaged -= HandleOnDamagedIncreaseCurrencyGold;
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            _weapon.Attack();
-        }
-    }
 
     public void SetWeapon(Weapon weapon)
     {
         _weapon = weapon;
     }
-
     private void HandleOnDamagedIncreaseCurrencyGold(int amountToIncrease)
     {
         CurrencyGold += amountToIncrease;
@@ -54,7 +49,7 @@ public class Player : MonoBehaviour,IDoEffects
 
     private void OnDestroy()
     {
-        Zombie.PlayerAlive = false;
+        PlayerData.PlayerAlive = false;
     }
 }
 
