@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: Zombie
   _target: {fileID: 0}
-  _speed: 0.5
+  _speed: 1.5
 --- !u!114 &-4002858397633941034
 MonoBehaviour:
   m_ObjectHideFlags: 0
