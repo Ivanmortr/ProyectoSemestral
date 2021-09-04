@@ -49,6 +49,7 @@ public class Player : MonoBehaviour,IDoEffects
     private void OnDestroy()
     {
         PlayerData.PlayerAlive = false;
+        Debug.Log("Luis"+PlayerData.PlayerAlive);
     }
 }
 
