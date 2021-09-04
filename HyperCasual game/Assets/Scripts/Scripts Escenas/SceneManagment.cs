@@ -15,19 +15,8 @@ public class SceneManagment : MonoBehaviour
         DOVirtual.DelayedCall(1.0f, GoNextScene);
         
    }
-   private void GoNextScene()
+   public void GoNextScene()
    {
-
-        SceneManager.LoadScene(_sceneName);
+        SceneManager.LoadScene(_sceneName); 
    }
-
-    public void GameOver()
-    {
-        Interfaces _ui = GetComponent<Interfaces>();
-        if (_ui != null)
-        {
-            _ui.ToggleDeath();
-        }
-    }
-
 }
