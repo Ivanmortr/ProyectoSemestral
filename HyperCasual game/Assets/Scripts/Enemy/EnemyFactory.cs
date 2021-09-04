@@ -17,4 +17,10 @@ public class EnemyFactory
         var enemy = _enemyConfiguration.GetEnemyPrefabById(id);
         return Object.Instantiate(enemy);
     }
+
+    public Enemy Create(string id,Transform parent)
+    {
+        var enemy = _enemyConfiguration.GetEnemyPrefabById(id);
+        return Object.Instantiate(enemy, parent);
+    }
 }
