@@ -23,12 +23,11 @@ public class Health : MonoBehaviour, IDamageable
     }
     private void OnDestroy()
     {
+        if (PlayerData.PlayerAlive || gameObject.name != "Player") return;
+        _deathPanel.SetActive(true);
         DOTween.Kill(transform);
         DOTween.Kill(gameObject);
-        if (!PlayerData.PlayerAlive&&gameObject.name=="Player")
-        {
-            Debug.Log("Unity");
-            _deathPanel?.SetActive(true);
-        }
+       
+
     }
 }
