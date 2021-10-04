@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: Zombie
   _target: {fileID: 0}
-  _speed: 1.5
+  _speed: 1
 --- !u!114 &-4002858397633941034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 2
   _currentHealth: 2
+  _deathPanel: {fileID: 0}
 --- !u!61 &7484403929351110013
 BoxCollider2D:
   m_ObjectHideFlags: 0
