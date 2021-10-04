@@ -11,6 +11,8 @@ public class clase1 : MonoBehaviour
     public bool position2A = false;
     public bool scale2 = false;
     public int velocidad = 0;
+    public int limit = 2;
+  
    
     // Start is called before the first frame update
     void Start()
@@ -68,7 +70,7 @@ public class clase1 : MonoBehaviour
         }
         if(position2)
         {
-            transform.position += new Vector3(5 * Time.deltaTime, 3 * Time.deltaTime, 0);   //hace que el movimiento sea positivo en x y en y
+            transform.position += new Vector3(10 * Time.deltaTime, 8 * Time.deltaTime, 0);   //hace que el movimiento sea positivo en x y en y
             Debug.Log("Postition2"); 
         }
         if(Input.GetKeyDown(KeyCode.L))
@@ -78,13 +80,17 @@ public class clase1 : MonoBehaviour
         }
         if (position2A)
         {
-            transform.position = new Vector3(transform.position.x + (5 * Time.deltaTime), transform.position.y - (3 * Time.deltaTime), 0);
-            position2 = false;            //hace que la poscicion en x se mueva constantemente positiva y en y constante negativa
+            transform.position = new Vector3(transform.position.x + (10 * Time.deltaTime), transform.position.y - (8 * Time.deltaTime), 0);
+            position2 = false;
+
+            //hace que la poscicion en x se mueva constantemente positiva y en y constante negativa
             Debug.Log("Postition2A");
         }
-        if (transform.position.y >= 0)
+        if (transform.position.y >= limit)
         {
-            position2A = true;             //cuando llega a 0 se activa position2A
+           
+            position2A = true;
+                                  //cuando llega a 0 se activa position2A
             Debug.Log("Llega a 0");
         }
         if (transform.position.y <= -4)
@@ -100,4 +106,5 @@ public class clase1 : MonoBehaviour
         transform.localScale = new Vector3(transform.localScale.x - (numero * Time.deltaTime), transform.localScale.y - (numero * Time.deltaTime), transform.localScale.z - (numero * Time.deltaTime));
         transform.position -= new Vector3(0, numero * Time.deltaTime, 0);
     }
+
 }
