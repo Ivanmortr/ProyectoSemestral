@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneName: Gameplay2D
+  _returnToMainScreen: 
 --- !u!4 &23880354
 Transform:
   m_ObjectHideFlags: 0
@@ -974,8 +975,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.000009536743, y: 282.876}
-  m_SizeDelta: {x: 472.0709, y: 198.1715}
+  m_AnchoredPosition: {x: 6.6615, y: 323.95}
+  m_SizeDelta: {x: 472.0709, y: 189.7912}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1072177107
 MonoBehaviour:

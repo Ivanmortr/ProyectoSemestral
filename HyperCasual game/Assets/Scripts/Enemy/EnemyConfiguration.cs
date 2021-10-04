@@ -8,7 +8,6 @@ public class EnemyConfiguration : ScriptableObject
     [SerializeField] private Enemy[] _enemies;
     private Dictionary<string, Enemy> _idToEnemy;
 
-
     private void Awake()
     {
         _idToEnemy = new Dictionary<string, Enemy>();
