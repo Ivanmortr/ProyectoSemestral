@@ -23,7 +23,7 @@ public class BossSpawner : MonoBehaviour
         while (PlayerData.PlayerAlive)
         {
             var randomNumber = Random.Range(0, _bossSpawns.Length);
-            _enemyFactory.Create("Boss", _bossSpawns[randomNumber].transform);
+            _enemyFactory.Create("Zombie", _bossSpawns[randomNumber].transform);
             yield return new WaitForSeconds(cdBoss);
         }
     }

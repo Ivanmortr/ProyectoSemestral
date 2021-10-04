@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2dfda9c2aaf11546b2ca8921100c8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: Boss
+  _id: Zombie
   _target: {fileID: 0}
   _speed: 5
 --- !u!114 &2451516435001992589
