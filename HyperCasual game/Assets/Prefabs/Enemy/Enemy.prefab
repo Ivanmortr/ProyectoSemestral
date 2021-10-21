@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8506055247406049137}
   - component: {fileID: 8264008641730460255}
+  - component: {fileID: 7253812429318705944}
+  - component: {fileID: 7270999512388220037}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -70,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: cd6dbb8d9ca024ef699dd81db2f8fdd7, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -4298345892085953899, guid: a26eb7f958c2811408a241f524871836, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,6 +84,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7253812429318705944
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6196076674197155525}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8ff0699cd76753f46ad3b21440c6d180, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7270999512388220037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6196076674197155525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fd3fa314612054aaacf476f2fe42c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1233485738300426692, guid: a0e7ed4d0b966a14ead97f6e108e20de, type: 3}
+  speed: 200
+  NextPointWayDistance: 3
+  Enemygfx: {fileID: 9012543189691515941}
 --- !u!1 &8959079839848032950
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Zombie
-  _target: {fileID: 0}
+  _target: {fileID: 1233485738300426692, guid: a0e7ed4d0b966a14ead97f6e108e20de, type: 3}
   _speed: 1
 --- !u!114 &-4002858397633941034
 MonoBehaviour:
@@ -160,7 +197,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.045206726, y: 0.017640948}
+  m_Offset: {x: 0.0072561204, y: 0.5265132}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -171,7 +208,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.757311, y: 1.5967977}
+  m_Size: {x: 0.5345661, y: 0.9962094}
   m_EdgeRadius: 0
 --- !u!50 &6557431847856438395
 Rigidbody2D:
