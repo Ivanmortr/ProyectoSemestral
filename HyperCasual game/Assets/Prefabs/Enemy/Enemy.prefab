@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8506055247406049137}
   - component: {fileID: 8264008641730460255}
   - component: {fileID: 7253812429318705944}
-  - component: {fileID: 7270999512388220037}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -103,22 +102,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7270999512388220037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6196076674197155525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10fd3fa314612054aaacf476f2fe42c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1233485738300426692, guid: a0e7ed4d0b966a14ead97f6e108e20de, type: 3}
-  speed: 200
-  NextPointWayDistance: 3
-  Enemygfx: {fileID: 9012543189691515941}
 --- !u!1 &8959079839848032950
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +115,8 @@ GameObject:
   - component: {fileID: -4002858397633941034}
   - component: {fileID: 7484403929351110013}
   - component: {fileID: 6557431847856438395}
+  - component: {fileID: 7194365404334582953}
+  - component: {fileID: -2539203445962008690}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -231,3 +216,47 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7194365404334582953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959079839848032950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fd3fa314612054aaacf476f2fe42c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1233485738300426692, guid: a0e7ed4d0b966a14ead97f6e108e20de, type: 3}
+  speed: 200
+  NextPointWayDistance: 3
+  Enemygfx: {fileID: 8506055247406049137}
+--- !u!114 &-2539203445962008690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959079839848032950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 1
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
