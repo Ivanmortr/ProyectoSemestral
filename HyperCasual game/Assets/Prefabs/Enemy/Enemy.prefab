@@ -115,8 +115,8 @@ GameObject:
   - component: {fileID: -4002858397633941034}
   - component: {fileID: 7484403929351110013}
   - component: {fileID: 6557431847856438395}
-  - component: {fileID: 7194365404334582953}
-  - component: {fileID: -2539203445962008690}
+  - component: {fileID: 8952970439830524395}
+  - component: {fileID: -6329875155639070017}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -216,23 +216,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7194365404334582953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8959079839848032950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10fd3fa314612054aaacf476f2fe42c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1233485738300426692, guid: a0e7ed4d0b966a14ead97f6e108e20de, type: 3}
-  speed: 200
-  NextPointWayDistance: 3
-  Enemygfx: {fileID: 8506055247406049137}
---- !u!114 &-2539203445962008690
+--- !u!114 &8952970439830524395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   drawGizmos: 1
-  detailedGizmos: 1
+  detailedGizmos: 0
   startEndModifier:
     addPoints: 0
     exactStartPoint: 3
@@ -260,3 +244,19 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &-6329875155639070017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959079839848032950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fd3fa314612054aaacf476f2fe42c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 200
+  NextPointWayDistance: 3
+  Enemygfx: {fileID: 0}
