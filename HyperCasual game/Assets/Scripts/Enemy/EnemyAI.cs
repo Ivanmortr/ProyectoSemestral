@@ -19,10 +19,13 @@ public class EnemyAI : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
+
+    public AIDestinationSetter setter;
      
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        setter.target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = setter.target;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         
@@ -45,11 +48,11 @@ public class EnemyAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
+    //void FixedUpdate()
+    //{
        
-
-        if (path == null)
+        
+        /*if (path == null)
             return;
         if (Currentwaypoint >= path.vectorPath.Count)
         {
@@ -62,7 +65,7 @@ public class EnemyAI : MonoBehaviour
 
         Vector2 direction = ((Vector2) path.vectorPath[Currentwaypoint] - rb.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, path.vectorPath[Currentwaypoint], Time.deltaTime*speed);
-
+        */
        /* rb.AddForce(force);
         
         float distance = Vector2.Distance(rb.position, path.vectorPath[Currentwaypoint]);
@@ -81,5 +84,6 @@ public class EnemyAI : MonoBehaviour
         {
             Enemygfx.localScale = new Vector3(1f, 1f, 1f);
         }*/
-    }
+    //}
+
 }
