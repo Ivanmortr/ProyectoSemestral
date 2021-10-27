@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Zombie
-  _target: {fileID: 1233485738300426692, guid: a0e7ed4d0b966a14ead97f6e108e20de, type: 3}
+  _target: {fileID: 0}
   _speed: 1
 --- !u!114 &-4002858397633941034
 MonoBehaviour:

@@ -6,6 +6,6 @@ public abstract class Enemy : MonoBehaviour
 
     public string ID => _id;
 
-    public abstract void ChaseTarget();
+   // public abstract void ChaseTarget();
 
 }

@@ -21,8 +21,8 @@ public class Zombie : Enemy, IDoEffects
 
     private void FixedUpdate()
     {
-        if(PlayerData.PlayerAlive)
-        ChaseTarget();
+       // if(PlayerData.PlayerAlive)
+        //ChaseTarget();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,13 +33,14 @@ public class Zombie : Enemy, IDoEffects
         effectPlayer?.DoEffect();
         healthPlayer?.DoDamage(1);
     }
-    public override void ChaseTarget()
-    {
-        var position = transform.position;
+    //public override void ChaseTarget()
+  //  {
+        /*var position = transform.position;
         var nextPoint = _target.position - position;
         nextPoint.Normalize();
-        _rigidbody2D.MovePosition(position + (nextPoint * (_speed * Time.deltaTime)));
-    }
+        _rigidbody2D.MovePosition(position + (nextPoint * (_speed * Time.deltaTime)));*/
+   // }
+
 
     public void DoEffect()
     {
