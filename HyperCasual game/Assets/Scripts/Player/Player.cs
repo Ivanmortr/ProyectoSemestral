@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Analytics;
 using DG.Tweening;
 
 
@@ -49,6 +50,11 @@ public class Player : MonoBehaviour,IDoEffects
     private void OnDestroy()
     {
         PlayerData.PlayerAlive = false;
+        if (PlayerData.PlayerAlive == false)
+        {
+            Analytics.CustomEvent("Murio");
+                
+        }
        
     }
 }
