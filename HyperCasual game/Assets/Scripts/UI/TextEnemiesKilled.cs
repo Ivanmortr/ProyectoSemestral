@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 
 public class TextEnemiesKilled : MonoBehaviour
@@ -7,6 +8,7 @@ public class TextEnemiesKilled : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textEnemiesKilled;
     private int _enemyKill = 0;
     [SerializeField] private TextMeshProUGUI Hscore;
+    private bool kills= false;
 
     public void Start()
     {
@@ -19,11 +21,17 @@ public class TextEnemiesKilled : MonoBehaviour
         Health.OnDeath += IncreaseEnemyKilled;
     }
 
-    private void IncreaseEnemyKilled(int enemyKilled)
+    public void IncreaseEnemyKilled(int enemyKilled)
     {
         _enemyKill++;
         _textEnemiesKilled.text = _enemyKill.ToString();
+        if (_enemyKill==20)
+        {
+          Analytics.CustomEvent("20Kills");
+            
+        }
 
+       
         if(_enemyKill> PlayerPrefs.GetInt("Text-highscore", 0))
         {
             PlayerPrefs.SetInt("Text-highscore", _enemyKill);
