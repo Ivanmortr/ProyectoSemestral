@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287c99b220486f34bb19c20ba27dd08a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textEnemiesKilled: {fileID: 0}
+  _textEnemiesKilled: {fileID: 893891278}
   Hscore: {fileID: 893891278}
 --- !u!114 &893891278
 MonoBehaviour:
