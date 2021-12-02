@@ -936,7 +936,10 @@ MonoBehaviour:
   - {fileID: 109241751}
   - {fileID: 1815282576}
   - {fileID: 1534159603}
-  _coolDownTime: 3
+  - {fileID: 1534159603}
+  - {fileID: 1815282576}
+  - {fileID: 109241751}
+  _coolDownTime: 1
 --- !u!4 &615646770
 Transform:
   m_ObjectHideFlags: 0
@@ -1335,6 +1338,22 @@ PrefabInstance:
     - target: {fileID: -3329821983593644720, guid: b9d793ad5cc02644f8b97bde816807fb, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3158802764877636963, guid: b9d793ad5cc02644f8b97bde816807fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4184283
+      objectReference: {fileID: 0}
+    - target: {fileID: -3158802764877636963, guid: b9d793ad5cc02644f8b97bde816807fb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4138343
+      objectReference: {fileID: 0}
+    - target: {fileID: -3158802764877636963, guid: b9d793ad5cc02644f8b97bde816807fb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.1663
+      objectReference: {fileID: 0}
+    - target: {fileID: -3158802764877636963, guid: b9d793ad5cc02644f8b97bde816807fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.7551
       objectReference: {fileID: 0}
     - target: {fileID: -3153089425640326332, guid: b9d793ad5cc02644f8b97bde816807fb, type: 3}
       propertyPath: m_Layer

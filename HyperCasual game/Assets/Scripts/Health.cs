@@ -20,15 +20,10 @@ public class Health : MonoBehaviour, IDamageable
         _currentHealth -= damageToDo;
         if (_currentHealth > 0) return;
         OnDeath?.Invoke(BasicBullet.AmountPerDeath);
-        destroy();
-   
-    }
-    void destroy()
-    {
-        Truena.Play();
-        print("Murio");
         Destroy(gameObject);
+
     }
+
     private void OnDestroy()
     {
         if (PlayerData.PlayerAlive || gameObject.name != "Player") return;
