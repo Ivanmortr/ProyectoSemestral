@@ -5,6 +5,7 @@ public class Health : MonoBehaviour, IDamageable
     public delegate void _OnDeath(int amountToIncrease);
     public static event _OnDeath OnDeath;
 
+    public AudioSource Truena;
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] private int _currentHealth = 100;
     [SerializeField] private GameObject _deathPanel;
@@ -19,6 +20,13 @@ public class Health : MonoBehaviour, IDamageable
         _currentHealth -= damageToDo;
         if (_currentHealth > 0) return;
         OnDeath?.Invoke(BasicBullet.AmountPerDeath);
+        destroy();
+   
+    }
+    void destroy()
+    {
+        Truena.Play();
+        print("Murio");
         Destroy(gameObject);
     }
     private void OnDestroy()

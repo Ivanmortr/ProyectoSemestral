@@ -37,7 +37,7 @@ public class JoystickPlayerRotation : MonoBehaviour
             {
               
                 _spriteRenderer.sprite = _spriteDown;
-                _spriteRenderer.sortingOrder = 1;
+                _spriteRenderer.sortingOrder = 3;
                 _basicGun.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                 _basicGun.transform.AssignPosition(_gunTransformDown);
 
@@ -67,7 +67,7 @@ public class JoystickPlayerRotation : MonoBehaviour
         {
           
             _spriteRenderer.sprite = _spriteUp;
-            _spriteRenderer.sortingOrder = 2;
+            _spriteRenderer.sortingOrder = 3;
             _basicGun.transform.rotation = Quaternion.Euler(0f, 0f, -90f);
             _basicGun.transform.AssignPosition(_gunTransformUp);
 
